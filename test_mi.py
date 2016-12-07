@@ -40,13 +40,20 @@ for line in lines:
         
 
         mapping = mapper[m];
+        line.reverse()
+        flag = False
+        for e in line:
+                if(mapping[0] in e and mapping[1] in e):
+                        species +=1
+                        flag = True
+                        break
+                elif(mapping[0] in e ):
+                        genus +=1
+                        flag = True
+                        break
+        if not flag:
+                others+= 1
 
-        if(mapping[0] in line[-1] and mapping[1] in line[-1]):
-                species +=1
-        elif(mapping[0] in line[-1] ):
-                genus +=1
-        else:
-                others+=1
 
 
 for d in data:
